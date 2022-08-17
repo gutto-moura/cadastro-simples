@@ -39,11 +39,14 @@ function Cadastro(){
                 <input 
                     placeholder = "Digite seu E-mail"
                     value = {email}
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                    title="formato 'email@provedor.com' "
                     onChange = {e => setEmail(e.target.value)}
                 />
                 <input 
                     placeholder = "Digite seu telefone"
                     value = {telefone}
+                    pattern = "^[0-9]{11}$"
                     onChange = {e => setTelefone(e.target.value)}
                 />
                 <input 

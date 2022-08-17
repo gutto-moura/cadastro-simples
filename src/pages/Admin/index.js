@@ -2,7 +2,7 @@ import { collection, getDocs, doc, deleteDoc  } from "firebase/firestore";
 import { useCallback, useEffect, useState } from "react";
 import { db } from "../../services/firebaseConfig";
 import { toast } from 'react-toastify';
-import { FcFullTrash } from "react-icons/fc";
+import { FcFullTrash,FcRefresh } from "react-icons/fc";
 
 function Admin(){
     const [users, setUsers] = useState([]);
@@ -21,7 +21,6 @@ function Admin(){
     }, [users]);
 
     //Buscar no BD todos os usuários
-    useEffect(() => {
         async function allUsers(){
             const list = [];
     
@@ -37,8 +36,6 @@ function Admin(){
             });
             setUsers(list);
         }
-        allUsers();
-    }, [users])
 
 //Deletar um usuario especifico
     const deleteUser = useCallback((id) => {
@@ -50,6 +47,7 @@ function Admin(){
 
     return(
         <div>
+            <button onClick={allUsers}><FcRefresh />Atualizar dados</button>
             <table>
                 <thead>
                     <th scope="col">NOME</th>
