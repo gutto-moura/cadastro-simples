@@ -1,7 +1,7 @@
-import { collection, addDoc,getDocs, doc, deleteDoc  } from "firebase/firestore";
-import { useCallback,useEffect, useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { useState } from "react";
 import { db } from "../../services/firebaseConfig";
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
 
 
 function Cadastro(){
@@ -9,20 +9,6 @@ function Cadastro(){
     const [email, setEmail] = useState('');
     const [telefone, setTelefone] = useState('');
     const [cidade, setCidade] = useState('');
-    const [usuarios, setUsuarios] = useState([]);
-
-    //Buscar lista no LocalStorage
-    useEffect(() => {
-        const listUsers = localStorage.getItem('@allUsers');
-        if(listUsers){
-            setUsuarios(JSON.parse(listUsers));
-        }
-    },[]);
-
-    //Salvar lista no LocalStorage
-    useEffect(() => {
-        localStorage.setItem('@allUsers', JSON.stringify(usuarios));
-    }, [usuarios]);
 
     //Inserir usuario
     async function insertUser(e){
@@ -41,36 +27,6 @@ function Cadastro(){
         console.error("Error adding document: ", e);
       }
     }
-
-    //Buscar todos os usuários
-    useEffect(() => {
-    async function allUser(){
-        const lista = [];
-
-        const querySnapshot = await getDocs(collection(db, "person"));
-        querySnapshot.forEach((doc) => {
-            lista.push({
-                id: doc.id,
-                nome: doc.data().nome,
-                email: doc.data().email,
-                telefone: doc.data().telefone,
-                cidade: doc.data().cidade
-            }) 
-        });
-        setUsuarios(lista);
-    }
-    allUser();
-}, [usuarios])
-
-    //Deletar um usuario especifico
-const deleteUser = useCallback((id) => {
-    deleteDoc(doc(db, "person", id));
-    const find = usuarios.filter(r => r.id !== id)
-        setUsuarios(find)
-        
-    }, [usuarios]);
-
-
 
     return(
         <div>
@@ -100,23 +56,7 @@ const deleteUser = useCallback((id) => {
             <div>
                 {/*<button onClick = {allUser}>Atualizar cadastros</button>*/}
             </div>
-            <div>
-                <ul>
-                    {
-                        usuarios.map((user) => {
-                            return(
-                                <li key={user.id}>
-                                    <span>NOME: {user.nome}</span><br/>
-                                    <span>CIDADE: {user.cidade}</span><br/>
-                                    <span>TELEFONE: {user.telefone}</span><br/>
-                                    <span>E-MAIL: {user.email}</span>
-                                    <button onClick={() => deleteUser(user.id)}>APAGAR</button>
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
-            </div>
+            
         </div>
 
     )
