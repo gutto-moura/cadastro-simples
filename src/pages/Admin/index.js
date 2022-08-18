@@ -2,7 +2,7 @@ import { collection, getDocs, doc, deleteDoc  } from "firebase/firestore";
 import { useCallback, useEffect, useState } from "react";
 import { db } from "../../services/firebaseConfig";
 import { toast } from 'react-toastify';
-import { FcFullTrash,FcRefresh } from "react-icons/fc";
+import { FcFullTrash,FcSynchronize } from "react-icons/fc";
 
 function Admin(){
     const [users, setUsers] = useState([]);
@@ -47,14 +47,16 @@ function Admin(){
 
     return(
         <div>
-            <button onClick={allUsers}><FcRefresh />Atualizar dados</button>
+            <button onClick={allUsers}><FcSynchronize />Atualizar dados</button>
             <table>
                 <thead>
-                    <th scope="col">NOME</th>
-                    <th scope="col">EMAIL</th>
-                    <th scope="col">TELEFONE</th>
-                    <th scope="col">CIDADE</th>
-                    <th scope="col">#</th>
+                    <tr>
+                        <th scope="col">NOME</th>
+                        <th scope="col">EMAIL</th>
+                        <th scope="col">TELEFONE</th>
+                        <th scope="col">CIDADE</th>
+                        <th scope="col">#</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {

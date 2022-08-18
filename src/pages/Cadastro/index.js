@@ -2,27 +2,25 @@ import { collection, addDoc } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../../services/firebaseConfig";
 import { toast } from 'react-toastify';
-
+import { FcFolder } from "react-icons/fc";
 
 function Cadastro(){
-    const [nome, setNome] = useState('');
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [telefone, setTelefone] = useState('');
-    const [cidade, setCidade] = useState('');
+    const [telephone, setTelephone] = useState('');
+    const [city, setCity] = useState('');
 
     //Inserir usuario
     async function insertUser(e){
         e.preventDefault();
     try {
         const docRef = await addDoc(collection(db, "person"), {
-          nome: nome,
+          nome: name,
           email: email,
-          telefone: telefone,
-          cidade: cidade
+          telefone: telephone,
+          cidade: city
         });
-        toast.success('Usuário adicionado!')
-        console.log("Document written with ID: ", docRef.id);
-    
+        toast.success('Usuário adicionado!') 
       } catch (e) {
         console.error("Error adding document: ", e);
       }
@@ -30,11 +28,15 @@ function Cadastro(){
 
     return(
         <div>
+            <div>
+                <h1>Cadastro simples</h1>
+                <span><FcFolder /> Ver cadastros</span>
+            </div>
             <form onSubmit={insertUser}>
                 <input 
                     placeholder = "Nome completo"
-                    value = {nome}
-                    onChange = {e => setNome(e.target.value)}
+                    value = {name}
+                    onChange = {e => setName(e.target.value)}
                 />
                 <input 
                     placeholder = "Digite seu E-mail"
@@ -45,20 +47,16 @@ function Cadastro(){
                 />
                 <input 
                     placeholder = "Digite seu telefone"
-                    value = {telefone}
-                    pattern = "^[0-9]{11}$"
-                    onChange = {e => setTelefone(e.target.value)}
+                    value = {telephone}
+                    onChange = {e => setTelephone(e.target.value)}
                 />
                 <input 
-                    placeholder = "Cidade que nasceu"
-                    value = {cidade}
-                    onChange = {e => setCidade(e.target.value)}
+                    placeholder = "Cidade do seu nascimento"
+                    value = {city}
+                    onChange = {e => setCity(e.target.value)}
                 />
                 <button type="submit">Cadastrar</button>
             </form>
-            <div>
-                {/*<button onClick = {allUser}>Atualizar cadastros</button>*/}
-            </div>
             
         </div>
 
