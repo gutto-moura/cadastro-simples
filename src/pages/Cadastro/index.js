@@ -2,7 +2,8 @@ import { collection, addDoc } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../../services/firebaseConfig";
 import { toast } from 'react-toastify';
-import { FcFolder } from "react-icons/fc";
+import { BsFillFolderSymlinkFill } from "react-icons/bs";
+import { ContainerCadastro, Title, Formulario, Admin } from "./styleCadastro";
 
 function Cadastro(){
     const [name, setName] = useState('');
@@ -27,12 +28,15 @@ function Cadastro(){
     }
 
     return(
-        <div>
-            <div>
+        <ContainerCadastro>
+            <Title>
                 <h1>Cadastro simples</h1>
-                <span><FcFolder /> Ver cadastros</span>
-            </div>
-            <form onSubmit={insertUser}>
+            </Title>
+            <Admin to = "/admin">
+                <BsFillFolderSymlinkFill size = "30" /> 
+                <span>Ver cadastros</span>
+            </Admin>
+            <Formulario onSubmit={insertUser}>
                 <input 
                     placeholder = "Nome completo"
                     value = {name}
@@ -56,9 +60,9 @@ function Cadastro(){
                     onChange = {e => setCity(e.target.value)}
                 />
                 <button type="submit">Cadastrar</button>
-            </form>
+            </Formulario>
             
-        </div>
+        </ContainerCadastro>
 
     )
 }

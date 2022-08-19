@@ -8,16 +8,16 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
     html, body, #root{
-        min-heigth: 100%;
+        min-height: 100%;
     }
     body{
-        background: #0D2636;
+        background: #F0F8FF;
         font-size: 14px;
         -webkit-font-smoothing: antialiased !important;
     }
 
     body, input, button{
-        color: #fff;
+        color: #000;
         font-size: 14px;
         font-family: 'Albert Sans', sans-serif;;
     }
