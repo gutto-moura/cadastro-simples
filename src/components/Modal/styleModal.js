@@ -14,7 +14,7 @@ export const InputSenha = styled.input`
     box-shadow: inset 0 0 .5em #ccc;
     border: 2px solid #ccc;
     text-align: center;
-
+    font-weight: bold;
 
 `
 export const BotaoEntrar = styled.button`

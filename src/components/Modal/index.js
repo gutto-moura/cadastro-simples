@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { ContainerModal, InputSenha, BotaoEntrar } from "./styleModal"
 import { useNavigate  } from "react-router-dom";
-
+import { toast } from 'react-toastify';
 
 const style = {
     position: 'absolute',
@@ -35,7 +35,7 @@ export default function BasicModal() {
         if(adminPassword === password){
             navigate("/admin", {replace: true})
         }else{
-            console.log('erro')
+            toast.error('SENHA INCORRETA!')
         }
         }
 
