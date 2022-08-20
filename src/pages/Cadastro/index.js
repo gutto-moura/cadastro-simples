@@ -4,12 +4,15 @@ import { db } from "../../services/firebaseConfig";
 import { toast } from 'react-toastify';
 import { BsFillFolderSymlinkFill } from "react-icons/bs";
 import { ContainerCadastro, Title, Formulario, Admin } from "./styleCadastro";
+import BasicModal from "../../components/Modal";
+
 
 function Cadastro(){
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [telephone, setTelephone] = useState('');
     const [city, setCity] = useState('');
+
 
     //Inserir usuario
     async function insertUser(e){
@@ -32,9 +35,9 @@ function Cadastro(){
             <Title>
                 <h1>Cadastro simples</h1>
             </Title>
-            <Admin to = "/admin">
+            <Admin onClick = {() => {}}>
                 <BsFillFolderSymlinkFill size = "30" /> 
-                <span>Ver cadastros</span>
+                <span>{<BasicModal />}</span>
             </Admin>
             <Formulario onSubmit={insertUser}>
                 <input 

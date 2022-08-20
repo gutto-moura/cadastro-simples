@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+
 
 export const ContainerCadastro = styled.div`
     width: 100vw;
@@ -22,7 +22,7 @@ export const Title = styled.div`
     }
 
 `;
-export const Admin = styled(Link)`
+export const Admin = styled.div`
     display: flex;
     align-items: center;
     cursor: pointer;
