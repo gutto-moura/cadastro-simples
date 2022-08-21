@@ -1,11 +1,14 @@
 import { collection, getDocs, doc, deleteDoc  } from "firebase/firestore";
 import { useCallback, useEffect, useState } from "react";
 import { db } from "../../services/firebaseConfig";
+import { useNavigate  } from "react-router-dom";
 import { toast } from 'react-toastify';
-import { FcFullTrash,FcSynchronize } from "react-icons/fc";
+import { ContainerAdmin, InformationAdmin } from "./styleAdmin";
+import { BsTrashFill, BsCloudArrowUpFill, BsFileEarmarkPlusFill } from "react-icons/bs";
 
 function Admin(){
     const [users, setUsers] = useState([]);
+    let navigate = useNavigate();
 
     //Buscar lista no LocalStorage
     useEffect(() => {
@@ -19,6 +22,10 @@ function Admin(){
     useEffect(() => {
         localStorage.setItem('@allUsers', JSON.stringify(users));
     }, [users]);
+
+    function backCadastro(){
+        navigate("/", {replace: true})
+    }
 
     //Buscar no BD todos os usuários
         async function allUsers(){
@@ -46,8 +53,13 @@ function Admin(){
     }, [users]);
 
     return(
-        <div>
-            <button onClick={allUsers}><FcSynchronize />Atualizar dados</button>
+        <ContainerAdmin>
+            <h1>Usuários cadastrados</h1>
+            <InformationAdmin>
+            <button onClick={allUsers}><BsCloudArrowUpFill size='25' /><span>Atualizar dados</span></button>
+            <h2>{users.length <= 0 ? "" : `Total de cadastro: ${users.length}`}</h2>
+            <button onClick={backCadastro}>{<BsFileEarmarkPlusFill size='25'/>}<span>Inserir cadastro</span></button>
+            </InformationAdmin>
             <table>
                 <thead>
                     <tr>
@@ -69,7 +81,7 @@ function Admin(){
                                     <td data-label = "cidade">{user.cidade}</td>
                                     <td data-label = "#">
                                         <button onClick={() => deleteUser(user.id)}>
-                                            <FcFullTrash size='20'/>
+                                            <BsTrashFill size='20' color='#363636' />
                                         </button>
                                     </td>
                                 </tr>
@@ -78,7 +90,7 @@ function Admin(){
                     }
                 </tbody>
             </table>
-        </div>
+            </ContainerAdmin>
     )
 }
 

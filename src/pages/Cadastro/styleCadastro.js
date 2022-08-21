@@ -19,6 +19,7 @@ export const Title = styled.div`
 
     h1{
         font-size: 60px;
+        color: 	#8B008B;
     }
 
 `;

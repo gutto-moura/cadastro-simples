@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Box from '@mui/material/Box';
+import { adminPassword } from "../../services/adminPassword";
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
@@ -23,7 +24,6 @@ const style = {
   };
 
 export default function BasicModal() {
-    const adminPassword = '1234';
     let navigate = useNavigate();
     const [password, setPassword] = useState('');
     const [open, setOpen] = useState(false);

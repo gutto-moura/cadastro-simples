@@ -1,0 +1,1 @@
+export const adminPassword = '561968';
