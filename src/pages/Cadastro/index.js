@@ -17,17 +17,21 @@ function Cadastro(){
     //Inserir usuario
     async function insertUser(e){
         e.preventDefault();
-    try {
-        const docRef = await addDoc(collection(db, "person"), {
-          nome: name,
-          email: email,
-          telefone: telephone,
-          cidade: city
-        });
-        toast.success('Usuário adicionado!') 
-      } catch (e) {
-        console.error("Error adding document: ", e);
-      }
+        if(name !== '' && email !== '' && telephone !== '' && city !== ''){
+            try {
+                await addDoc(collection(db, "person"), {
+                nome: name,
+                email: email,
+                telefone: telephone,
+                cidade: city
+                });
+                toast.success('Usuário adicionado!') 
+            } catch (e) {
+                    console.error("Error adding document: ", e);
+            }
+            }else{
+                toast.error('Preencha todos os campos!')
+        }
     }
 
     return(
@@ -41,7 +45,7 @@ function Cadastro(){
             </Admin>
             <Formulario onSubmit={insertUser}>
                 <input 
-                    placeholder = "Nome completo"
+                    placeholder = "Digite seu nome completo"
                     value = {name}
                     onChange = {e => setName(e.target.value)}
                 />
@@ -58,7 +62,7 @@ function Cadastro(){
                     onChange = {e => setTelephone(e.target.value)}
                 />
                 <input 
-                    placeholder = "Cidade do seu nascimento"
+                    placeholder = "Cidade onde nasceu"
                     value = {city}
                     onChange = {e => setCity(e.target.value)}
                 />
