@@ -39,7 +39,7 @@ function Cadastro(){
             <Title>
                 <h1>Cadastro simples</h1>
             </Title>
-            <Admin onClick = {() => {}}>
+            <Admin>
                 <BsFillFolderSymlinkFill size = "30" /> 
                 <span>{<BasicModal />}</span>
             </Admin>
