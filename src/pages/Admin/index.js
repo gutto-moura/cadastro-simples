@@ -28,7 +28,7 @@ function Admin(){
     }
 
     //Buscar no BD todos os usuários
-        async function allUsers(){
+    async function allUsers(){
             const list = [];
     
             const querySnapshot = await getDocs(collection(db, "person"));
@@ -42,7 +42,7 @@ function Admin(){
                 }) 
             });
             setUsers(list);
-        }
+    }
 
 //Deletar um usuario especifico
     const deleteUser = useCallback((id) => {

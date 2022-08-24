@@ -13,10 +13,10 @@ function Cadastro(){
     const [telephone, setTelephone] = useState('');
     const [city, setCity] = useState('');
 
-
     //Inserir usuario
     async function insertUser(e){
         e.preventDefault();
+
         if(name !== '' && email !== '' && telephone !== '' && city !== ''){
             try {
                 await addDoc(collection(db, "person"), {
@@ -25,12 +25,12 @@ function Cadastro(){
                 telefone: telephone,
                 cidade: city
                 });
-                toast.success('Usuário adicionado!') 
+                toast.success('Usuário adicionado!');
             } catch (e) {
                     console.error("Error adding document: ", e);
             }
             }else{
-                toast.error('Preencha todos os campos!')
+                toast.error('Preencha todos os campos!');
         }
     }
 
@@ -68,7 +68,6 @@ function Cadastro(){
                 />
                 <button type="submit">Cadastrar</button>
             </Formulario>
-            
         </ContainerCadastro>
 
     )
