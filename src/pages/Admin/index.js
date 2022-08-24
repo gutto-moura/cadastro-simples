@@ -1,8 +1,8 @@
 import { collection, getDocs, doc, deleteDoc  } from "firebase/firestore";
 import { useCallback, useEffect, useState } from "react";
-import { db } from "../../services/firebaseConfig";
 import { useNavigate  } from "react-router-dom";
 import { toast } from 'react-toastify';
+import { db } from "../../services/firebaseConfig";
 import { ContainerAdmin, InformationAdmin } from "./styleAdmin";
 import { BsTrashFill, BsCloudArrowUpFill, BsFileEarmarkPlusFill } from "react-icons/bs";
 

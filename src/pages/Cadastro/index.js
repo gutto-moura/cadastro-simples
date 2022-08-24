@@ -1,10 +1,10 @@
 import { collection, addDoc } from "firebase/firestore";
 import { useState } from "react";
-import { db } from "../../services/firebaseConfig";
 import { toast } from 'react-toastify';
 import { BsFillFolderSymlinkFill } from "react-icons/bs";
 import { ContainerCadastro, Title, Formulario, Admin } from "./styleCadastro";
 import BasicModal from "../../components/Modal";
+import { db } from "../../services/firebaseConfig";
 
 
 function Cadastro(){

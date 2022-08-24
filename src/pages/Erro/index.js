@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import { ContainerError, BotaoCadastro } from "./styleError"
+
 function Erro(){
     return(
       <ContainerError>

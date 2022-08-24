@@ -1,7 +1,8 @@
+import { BrowserRouter, Routes,  Route} from "react-router-dom";
+
 import Home from "../pages/Cadastro";
 import Admin from "../pages/Admin";
 import Error from "../pages/Erro";
-import { BrowserRouter, Routes,  Route} from "react-router-dom";
 
 const Router = (() => {
     return(
