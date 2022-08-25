@@ -90,6 +90,19 @@ function Admin(){
                     }
                 </tbody>
             </table>
+            <section>
+                {users.map((user) => {
+                    return(
+                        <article key = {user.id}>
+                            <span><strong>Nome:</strong><h4>{user.nome}</h4></span>
+                            <span><strong>E-mail:</strong>{user.email}</span>
+                            <span><strong>Telefone:</strong>{user.telefone}</span>
+                            <span><strong>Cidade:</strong>{user.cidade}</span>
+                            <span><strong><BsTrashFill size='20' color='#363636' /></strong></span>
+                        </article>
+                    )
+                })}
+            </section>
             </ContainerAdmin>
     )
 }

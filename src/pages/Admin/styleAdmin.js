@@ -5,6 +5,19 @@ export const ContainerAdmin = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    section{
+        display: none;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+
+        article{
+            width: 100%;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+    }
     h1{
         margin-bottom: 50px;
         margin-top: 30px;
@@ -45,6 +58,12 @@ export const ContainerAdmin = styled.div`
             border: none;
         }
     }
+    @media(max-width: 769px) {
+        section{
+            display: flex;
+        }
+
+}
 `;
 export const InformationAdmin = styled.div`
     display: flex;
