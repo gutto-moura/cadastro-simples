@@ -5,17 +5,45 @@ export const ContainerAdmin = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     section{
         display: none;
-        display: flex;
         flex-direction: column;
-        width: 80%;
+        width: 90%;
+        margin-top: 50px;
+        justify-content: center;
 
-        article{
+        ul{
             width: 100%;
             margin-bottom: 20px;
             display: flex;
             flex-direction: column;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #CCC;
+            box-shadow: 0 0 .3em #ccc;
+
+            li{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                flex-wrap: wrap;
+                font-size: 17px;
+
+                span{
+                    color: #76777c;
+                    
+                }
+                button{
+                    display: flex;
+                    border: none;
+                    background-color: transparent;
+                    align-items: center;
+                    padding: 10px;
+                    margin: 0 auto;
+                }
+            }
         }
     }
     h1{
@@ -23,13 +51,17 @@ export const ContainerAdmin = styled.div`
         margin-top: 30px;
         font-size: 50px;
         color: 	#8B008B;
+
+        @media(max-width: 769px) {
+            text-align: center;
+        }
     }
     table{
         border:1px solid #CCC;
         border-collapse: collapse;
         margin: 0;
         padding: 0;
-        width: 80%;
+        width: 90%;
         table-layout: fixed;
         margin-top: 30px;
 
@@ -57,13 +89,15 @@ export const ContainerAdmin = styled.div`
             background-color: transparent;
             border: none;
         }
+        @media(max-width: 769px) {
+            display: none;
+        }
     }
     @media(max-width: 769px) {
         section{
             display: flex;
         }
-
-}
+    }
 `;
 export const InformationAdmin = styled.div`
     display: flex;

@@ -93,13 +93,13 @@ function Admin(){
             <section>
                 {users.map((user) => {
                     return(
-                        <article key = {user.id}>
-                            <span><strong>Nome:</strong><h4>{user.nome}</h4></span>
-                            <span><strong>E-mail:</strong>{user.email}</span>
-                            <span><strong>Telefone:</strong>{user.telefone}</span>
-                            <span><strong>Cidade:</strong>{user.cidade}</span>
-                            <span><strong><BsTrashFill size='20' color='#363636' /></strong></span>
-                        </article>
+                        <ul key = {user.id}>
+                            <li><strong>Nome:</strong><span>{user.nome}</span></li>
+                            <li><strong>E-mail:</strong><span>{user.email}</span></li>
+                            <li><strong>Telefone:</strong><span>{user.telefone}</span></li>
+                            <li><strong>Cidade:</strong><span>{user.cidade}</span></li>
+                            <li><button><BsTrashFill size='25' color='#363636' /></button></li>
+                        </ul>
                     )
                 })}
             </section>
