@@ -98,7 +98,9 @@ function Admin(){
                             <li><strong>E-mail:</strong><span>{user.email}</span></li>
                             <li><strong>Telefone:</strong><span>{user.telefone}</span></li>
                             <li><strong>Cidade:</strong><span>{user.cidade}</span></li>
-                            <li><button onClick={backCadastro} ><BsTrashFill size='25' color='#363636' /></button></li>
+                            <li><button onClick={() => deleteUser(user.id)} >
+                                <BsTrashFill size='25' color='#363636' />
+                            </button></li>
                         </ul>
                     )
                 })}
