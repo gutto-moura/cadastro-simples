@@ -52,7 +52,7 @@ export const ContainerAdmin = styled.div`
         font-size: 50px;
         color: 	#8B008B;
 
-        @media(max-width: 769px) {
+        @media(max-width: 965px) {
             text-align: center;
         }
     }
@@ -89,11 +89,11 @@ export const ContainerAdmin = styled.div`
             background-color: transparent;
             border: none;
         }
-        @media(max-width: 769px) {
+        @media(max-width: 965px) {
             display: none;
         }
     }
-    @media(max-width: 769px) {
+    @media(max-width: 965px) {
         section{
             display: flex;
         }
@@ -106,6 +106,8 @@ export const InformationAdmin = styled.div`
     
     h2{
         font-size: 25px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
     button{
         display: flex;
@@ -117,9 +119,23 @@ export const InformationAdmin = styled.div`
         background-color: #0886ff;
         color: #fff;
 
-
         span{
             padding-left: 10px;
+        }
+    }
+    @media(max-width: 625px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        button{
+            width: 200px;
+           justify-content: center;
+           margin-bottom: 20px;
+           margin-top: 20px;
+        }
+        h2{
+            font-size: 30px;
         }
     }
 `;

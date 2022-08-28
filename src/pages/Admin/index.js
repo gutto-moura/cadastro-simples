@@ -57,7 +57,7 @@ function Admin(){
             <h1>Usuários cadastrados</h1>
             <InformationAdmin>
                 <button onClick={allUsers}><BsCloudArrowUpFill size='25' /><span>Atualizar dados</span></button>
-                <h2>{users.length <= 0 ? "" : `Total de cadastro: ${users.length}`}</h2>
+                <h2>{users.length <= 0 ? "" : `Cadastros: ${users.length}`}</h2>
                 <button onClick={backCadastro}>{<BsFileEarmarkPlusFill size='25'/>}<span>Inserir cadastro</span></button>
             </InformationAdmin>
             <table>
