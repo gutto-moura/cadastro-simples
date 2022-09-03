@@ -7,10 +7,10 @@ import { ContainerAdmin, InformationAdmin } from "./styleAdmin";
 import { BsTrashFill, BsCloudArrowUpFill, BsFileEarmarkPlusFill } from "react-icons/bs";
 
 function Admin(){
-    const [users, setUsers] = useState([]);
     let navigate = useNavigate();
+    const [users, setUsers] = useState([]);
 
-    //Buscar lista no LocalStorage
+//Buscar lista no LocalStorage
     useEffect(() => {
         const listUsers = localStorage.getItem('@allUsers');
         if(listUsers){
@@ -18,7 +18,7 @@ function Admin(){
         }
     },[]);
 
-    //Salvar lista no LocalStorage
+//Salvar lista no LocalStorage
     useEffect(() => {
         localStorage.setItem('@allUsers', JSON.stringify(users));
     }, [users]);
@@ -27,7 +27,7 @@ function Admin(){
         navigate("/", {replace: true})
     }
 
-    //Buscar no BD todos os usuários
+//Buscar no BD todos os usuários
     async function allUsers(){
             const list = [];
     
@@ -56,9 +56,17 @@ function Admin(){
         <ContainerAdmin>
             <h1>Usuários cadastrados</h1>
             <InformationAdmin>
-                <button onClick={allUsers}><BsCloudArrowUpFill size='25' /><span>Atualizar dados</span></button>
-                <h2>{users.length <= 0 ? "" : `Cadastros: ${users.length}`}</h2>
-                <button onClick={backCadastro}>{<BsFileEarmarkPlusFill size='25'/>}<span>Inserir cadastro</span></button>
+                <button onClick={allUsers}>
+                    <BsCloudArrowUpFill size='25' />
+                    <span>Atualizar dados</span>
+                </button>
+                <h2>
+                    {users.length <= 0 ? "" : `Cadastros: ${users.length}`}
+                </h2>
+                <button onClick={backCadastro}>
+                    <BsFileEarmarkPlusFill size='25'/>
+                    <span>Inserir cadastro</span>
+                </button>
             </InformationAdmin>
             <table>
                 <thead>
@@ -87,25 +95,26 @@ function Admin(){
                                 </tr>
                             )
                         })
+                        }
+                    </tbody>
+                </table>
+                <section>
+                    {users.map((user) => {
+                        return(
+                            <ul key = {user.id}>
+                                <li><strong>Nome:</strong><span>{user.nome}</span></li>
+                                <li><strong>E-mail:</strong><span>{user.email}</span></li>
+                                <li><strong>Telefone:</strong><span>{user.telefone}</span></li>
+                                <li><strong>Cidade:</strong><span>{user.cidade}</span></li>
+                                <li><button onClick={() => deleteUser(user.id)} >
+                                    <BsTrashFill size='25' color='#363636' />
+                                </button></li>
+                            </ul>
+                            )
+                        })
                     }
-                </tbody>
-            </table>
-            <section>
-                {users.map((user) => {
-                    return(
-                        <ul key = {user.id}>
-                            <li><strong>Nome:</strong><span>{user.nome}</span></li>
-                            <li><strong>E-mail:</strong><span>{user.email}</span></li>
-                            <li><strong>Telefone:</strong><span>{user.telefone}</span></li>
-                            <li><strong>Cidade:</strong><span>{user.cidade}</span></li>
-                            <li><button onClick={() => deleteUser(user.id)} >
-                                <BsTrashFill size='25' color='#363636' />
-                            </button></li>
-                        </ul>
-                    )
-                })}
-            </section>
-            </ContainerAdmin>
+                </section>
+        </ContainerAdmin>
     )
 }
 

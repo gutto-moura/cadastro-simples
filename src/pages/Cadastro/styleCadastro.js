@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const ContainerCadastro = styled.div`
     width: 100vw;
     display: flex;
@@ -39,7 +38,7 @@ export const Admin = styled.div`
         font-size: 18px;
         margin-left: 10px;
     }
-`
+`;
 export const Formulario = styled.form`
     display: flex;
     flex-direction: column;
@@ -81,4 +80,4 @@ export const Formulario = styled.form`
 
         }
     }
-`
+`;

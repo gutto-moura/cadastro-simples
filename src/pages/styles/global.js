@@ -19,7 +19,7 @@ export default createGlobalStyle`
     body, input, button{
         color: #000;
         font-size: 14px;
-        font-family: 'Albert Sans', sans-serif;;
+        font-family: 'Albert Sans', sans-serif;
     }
     button{
         cursor: pointer;

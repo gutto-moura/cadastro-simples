@@ -6,14 +6,13 @@ import { ContainerCadastro, Title, Formulario, Admin } from "./styleCadastro";
 import BasicModal from "../../components/Modal";
 import { db } from "../../services/firebaseConfig";
 
-
 function Cadastro(){
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [telephone, setTelephone] = useState('');
     const [city, setCity] = useState('');
 
-    //Inserir usuario
+//Inserir usuario
     async function insertUser(e){
         e.preventDefault();
 
