@@ -42,6 +42,7 @@ function Cadastro(){
                 <BsFillFolderSymlinkFill size = "30" /> 
                 <span>{<BasicModal />}</span>
             </Admin>
+            
             <Formulario onSubmit={insertUser}>
                 <input 
                     placeholder = "Digite seu nome completo"

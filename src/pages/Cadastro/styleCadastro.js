@@ -19,6 +19,11 @@ export const Title = styled.div`
     h1{
         font-size: 60px;
         color: 	#8B008B;
+
+        @media(max-width: 480px) {
+            font-size: 50px;
+            text-align: center;
+        }
     }
 
 `;
@@ -43,6 +48,8 @@ export const Formulario = styled.form`
     display: flex;
     flex-direction: column;
     background-color: #fff;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 1em #eee;
@@ -60,6 +67,9 @@ export const Formulario = styled.form`
         ::placeholder{
             font-weight: bold;
         }
+        @media(max-width: 515px) {
+            width: 100%;
+        }
     }
 
     button{
@@ -70,6 +80,7 @@ export const Formulario = styled.form`
         background-color: #4B0082;
         border-radius: 10px;
         color: #fff;
+        width: inherit;
 
         :hover{
             cursor: pointer;
@@ -77,7 +88,10 @@ export const Formulario = styled.form`
             background-color: transparent;
             color: #4B0082;
             transition: 1s;
-
         }
     }
+
+    @media(max-width: 515px) {
+            width: 90%;
+        }
 `;
