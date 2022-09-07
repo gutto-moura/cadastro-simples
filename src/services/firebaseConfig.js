@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCwWgQzIV1YM2ERR14yShBZeZXRCrQ6-xk",
-  authDomain: "projeto-cadastro-experience.firebaseapp.com",
-  projectId: "projeto-cadastro-experience",
-  storageBucket: "projeto-cadastro-experience.appspot.com",
-  messagingSenderId: "1067588144431",
-  appId: "1:1067588144431:web:24e77cb061accf129b25da",
-  measurementId: "G-JCK3F9GMR5"
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSEAGINGSENDERID,
+  appId: process.env.REACT_APP_FIREBASE_APPID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID
 };
 
 // Initialize Firebase

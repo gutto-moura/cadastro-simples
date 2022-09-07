@@ -1,2 +1,2 @@
 # Cadastrei
-Projeto de cadastro simpleS
+Projeto de cadastro simples
