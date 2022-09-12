@@ -13,4 +13,4 @@ Projeto pessoal para colocar em prática os principais conceitos aprendidos até
 - [x] Excluir o usuário
 
 ## 🔗 Link do projeto:
-![Acesse Cadastrei](https://cadastrei.netlify.app)
+![Acesse Cadastrei](https://cadastrei.netlify.app/)
