@@ -24,5 +24,5 @@ Projeto pessoal para colocar em prática os principais conceitos aprendidos até
 | @material core/icon |        Permite desenvolvedores usarem Material Design        |
 | React-Toastify      |   Biblioteca simples para criação de toasts customizados.    |
 | React-icons         |  Biblioteca para importar icones                             |
-| Firebase            | plataforma de desenvolvimento de aplicativos móveis e aplicações Web do Google |
+| Firebase            | Plataforma de desenvolvimento de aplicativos móveis e aplicações Web do Google |
 
