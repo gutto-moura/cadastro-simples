@@ -13,11 +13,11 @@ Projeto pessoal para colocar em prática os principais conceitos aprendidos até
     <img src="https://user-images.githubusercontent.com/86565123/189910140-d8a343bc-14a2-4e6a-b0ea-8c32beb3d260.png" width="400px" align= "center"/>
 
 - [x] Buscar dados do usuário <br/>
-    <img src="https://user-images.githubusercontent.com/86565123/189910142-9ccd3064-4817-4a13-a8f8-370fad9ba761.png" width="400px" align= "center"/><br/><br/>
-    <img src="https://user-images.githubusercontent.com/86565123/189910145-596ed0bb-5fc2-45a2-bb22-6f0ff0ee1a08.png" width="400px" align= "center"/>
+    <img src="https://user-images.githubusercontent.com/86565123/189910142-9ccd3064-4817-4a13-a8f8-370fad9ba761.png" width="600px" align= "center"/><br/><br/>
+    <img src="https://user-images.githubusercontent.com/86565123/189910145-596ed0bb-5fc2-45a2-bb22-6f0ff0ee1a08.png" width="600px" align= "center"/>
 
 - [x] Excluir o usuário <br/>
-    <img src="https://user-images.githubusercontent.com/86565123/189910148-c36bb2fb-8e5e-4033-86ee-e2870352dba8.png" width="300px" align= "center"/>
+    <img src="https://user-images.githubusercontent.com/86565123/189910148-c36bb2fb-8e5e-4033-86ee-e2870352dba8.png" width="600px" align= "center"/>
 
 ## 🔗 Link do projeto:
 [Acesse Cadastrei](https://cadastrei.netlify.app/)
