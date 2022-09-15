@@ -17,7 +17,7 @@ Projeto pessoal para colocar em prática os principais conceitos aprendidos até
     <img src="https://user-images.githubusercontent.com/86565123/189910145-596ed0bb-5fc2-45a2-bb22-6f0ff0ee1a08.png" width="600px" align= "center"/>
 
 - [x] Excluir o usuário <br/>
-    <img src="https://user-images.githubusercontent.com/86565123/189910148-c36bb2fb-8e5e-4033-86ee-e2870352dba8.png" width="600px" align= "center"/>
+    <img src="https://user-images.githubusercontent.com/86565123/189910148-c36bb2fb-8e5e-4033-86ee-e2870352dba8.png" width="700px" align= "center"/>
 
 ## 🔗 Link do projeto:
 [Acesse Cadastrei](https://cadastrei.netlify.app/)
